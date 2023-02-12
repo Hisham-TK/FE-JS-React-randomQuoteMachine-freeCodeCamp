@@ -1,0 +1,62 @@
+
+/* Mixin */
+@mixin textPrimaryColor
+    color: var(--primary-color)
+
+@mixin textBackgroundColor
+    color: var(--background-color)
+
+@mixin linkUndelineColor
+    text-decoration-color: var(--background-color)
+
+@mixin backgroundColor
+    background-color: var(--background-color)
+
+@mixin buttonStyle
+    @include textBackgroundColor
+    background-color: var(--primary-color)
+
+/* Media */
+@media (max-width: 700px)
+    #quote
+        width: 80%
+
+/* Custom styles */
+#quote
+    width: 50%
+    max-width: 30rem
+    margin: auto
+
+#quote-box
+    @include backgroundColor
+    padding: 2rem
+    border-radius: 4px
+
+#text
+    @include textPrimaryColor
+    text-align: center
+    margin: 0 1rem
+
+#author
+    @include textPrimaryColor
+    text-align: right
+
+#stack
+    margin-top: 8px
+
+#new-quote
+    @include buttonStyle
+
+#tweet-quote
+    @include buttonStyle
+    border-radius: 4px
+
+#app-author
+    @include textBackgroundColor
+    text-align: center
+    margin: 16px 0
+
+    & a
+        @include textBackgroundColor
+        @include linkUndelineColor
+        color: white
